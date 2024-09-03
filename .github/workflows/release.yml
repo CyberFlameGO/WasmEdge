@@ -176,7 +176,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Download ${{ matrix.name }} rpm artifact
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4.1.7
         with:
           name: WasmEdge-${{ needs.create_release.outputs.version }}-${{ matrix.name }}.rpm
       - name: Verify the arifact
@@ -193,7 +193,7 @@ jobs:
           asset_name: WasmEdge-${{ needs.create_release.outputs.version }}-${{ matrix.name }}.rpm
           asset_content_type: application/x-rpm
       - name: Download ${{ matrix.name }} tar.gz artifact
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4.1.7
         with:
           name: WasmEdge-${{ needs.create_release.outputs.version }}-${{ matrix.name }}.tar.gz
       - name: Upload ${{ matrix.name }} tar.gz package
@@ -206,7 +206,7 @@ jobs:
           asset_name: WasmEdge-${{ needs.create_release.outputs.version }}-${{ matrix.name }}.tar.gz
           asset_content_type: application/x-gzip
       - name: Download ${{ matrix.name }} tar.xz artifact
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4.1.7
         with:
           name: WasmEdge-${{ needs.create_release.outputs.version }}-${{ matrix.name }}.tar.xz
       - name: Upload ${{ matrix.name }} tar.xz package
